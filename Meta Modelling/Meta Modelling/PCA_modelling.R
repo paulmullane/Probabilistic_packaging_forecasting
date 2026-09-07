@@ -5,7 +5,7 @@ library(cowplot)
 theme_set(theme_cowplot())
 
 #reading data----
-meta_data <- read_csv('C:/Users/20229798/OneDrive - University of Limerick/Desktop/Packaging waste forecasting/Meta Modelling/Creating Meta Datasets/meta_dataset.csv')
+meta_data <- read_csv('Desktop/Packaging waste forecasting/Meta Modelling/Creating Meta Datasets/meta_dataset.csv')
 
 #select numerical variables from the larger dataset----
 pca_data <- meta_data[, c('n_covariates', 'train_sd', 'test_sd', 'sd_ratio', 
