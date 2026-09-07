@@ -39,7 +39,7 @@ variables <- c("co2_forecasts", "energy_consumption_forecasts", "gdp_forecasts",
                "population_forecasts")
 
 forecasting_data <- lapply(setNames(variables, tolower(variables)), function(ctry) {
-  df <- read.csv(paste0("C:/Users/20229798/OneDrive - University of Limerick/Desktop/Covariate Forecasting/Actually generating forecasts/", ctry, ".csv")) 
+  df <- read.csv(paste0("Desktop/Covariate Forecasting/Actually generating forecasts/", ctry, ".csv")) 
 })
 list2env(forecasting_data, envir = .GlobalEnv)
 
