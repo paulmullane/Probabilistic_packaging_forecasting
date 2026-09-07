@@ -3,3 +3,5 @@ The country data and packaging data files contain the data used for the modellin
 The files in the 'Selecting optimal models' folder fit the candidate models for each of the packaging waste streams.
 
 The files in the Probabilistic Forecasting folder performs the forecasting using the optimal model for each of the waste streams in each of the countries.
+
+The files in Meta Modelling contain the code and datasets generated for the PCA meta analysis
