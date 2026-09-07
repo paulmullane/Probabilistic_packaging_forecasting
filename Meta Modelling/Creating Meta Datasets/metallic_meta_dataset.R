@@ -14,7 +14,7 @@ library(arm)
 
 #loading in the data----
 #packaging data
-metallic_packaging_waste <- read_excel("C:/Users/20229798/OneDrive - University of Limerick/Desktop/Packaging waste forecasting/Packaging Data/metallic_packaging_waste.xlsx")
+metallic_packaging_waste <- read_excel("Desktop/Packaging waste forecasting/Packaging Data/metallic_packaging_waste.xlsx")
 metallic_packaging_waste$TIME <- as.double(metallic_packaging_waste$TIME)
 
 #training data
@@ -23,7 +23,7 @@ countries <- c("Austria", "Belgium", "Denmark", "Finland", "France", "Germany",
 vars <- c("Year", "Population", "GDP", "material_footprint", "energy_consumption", "co2", "exports")
 
 modelling_data <- lapply(setNames(countries, tolower(countries)), function(ctry) {
-  df <- read_excel(paste0("C:/Users/20229798/OneDrive - University of Limerick/Desktop/Packaging waste forecasting/Country data/", ctry, ".xlsx")) |>
+  df <- read_excel(paste0("Desktop/Packaging waste forecasting/Country data/", ctry, ".xlsx")) |>
     dplyr::select(all_of(vars)) |>
     filter(Year >= 1997, Year <= 2022)
   df$mpw <- metallic_packaging_waste[[ctry]][metallic_packaging_waste$TIME <= 2022]
@@ -39,7 +39,7 @@ variables <- c("co2_forecasts", "energy_consumption_forecasts", "gdp_forecasts",
                "population_forecasts")
 
 forecasting_data <- lapply(setNames(variables, tolower(variables)), function(ctry) {
-  df <- read.csv(paste0("C:/Users/20229798/OneDrive - University of Limerick/Desktop/Covariate Forecasting/Actually generating forecasts/", ctry, ".csv")) 
+  df <- read.csv(paste0("Desktop/Covariate Forecasting/Actually generating forecasts/", ctry, ".csv")) 
 })
 list2env(forecasting_data, envir = .GlobalEnv)
 
