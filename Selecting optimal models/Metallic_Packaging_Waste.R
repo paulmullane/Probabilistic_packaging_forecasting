@@ -290,7 +290,7 @@ rolling_cv_cubist <- function(train_data, covariates){
   return(best)
 }
 #read waste data-----
-Metallic_Packaging_Waste <- read_excel("C:/Users/20229798/OneDrive - University of Limerick/Desktop/Packaging waste forecasting/Packaging Data/Metallic_packaging_waste.xlsx")
+Metallic_Packaging_Waste <- read_excel("Desktop/Packaging waste forecasting/Packaging Data/Metallic_packaging_waste.xlsx")
 Metallic_Packaging_Waste$TIME <- as.double(Metallic_Packaging_Waste$TIME)
 
 #read country data----
@@ -301,7 +301,7 @@ countries <- c("Austria", "Belgium", "Denmark", "Finland", "France", "Germany",
 vars <- c("Year", "Population", "GDP", "material_footprint", "energy_consumption", "co2", "exports")
 
 modelling_data <- lapply(setNames(countries, tolower(countries)), function(ctry) {
-  df <- read_excel(paste0("C:/Users/20229798/OneDrive - University of Limerick/Desktop/Packaging waste forecasting/Country data/", ctry, ".xlsx")) |>
+  df <- read_excel(paste0("Desktop/Packaging waste forecasting/Country data/", ctry, ".xlsx")) |>
     dplyr::select(all_of(vars)) |>
     filter(Year >= 1997, Year <= 2022)
   df$mpw <- Metallic_Packaging_Waste[[ctry]][Metallic_Packaging_Waste$TIME <= 2022]
