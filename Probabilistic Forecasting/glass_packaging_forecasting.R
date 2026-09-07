@@ -14,7 +14,7 @@ library(arm)
 
 #loading in the data----
 #packaging data
-glass_packaging_waste <- read_excel("C:/Users/20229798/OneDrive - University of Limerick/Desktop/Packaging waste forecasting/Packaging Data/glass_packaging_waste.xlsx")
+glass_packaging_waste <- read_excel("Desktop/Packaging waste forecasting/Packaging Data/glass_packaging_waste.xlsx")
 glass_packaging_waste$TIME <- as.double(glass_packaging_waste$TIME)
 
 #training data
@@ -23,7 +23,7 @@ countries <- c("Austria", "Belgium", "Denmark", "Finland", "France", "Germany",
 vars <- c("Year", "Population", "GDP", "material_footprint", "energy_consumption", "co2", "exports")
 
 modelling_data <- lapply(setNames(countries, tolower(countries)), function(ctry) {
-  df <- read_excel(paste0("C:/Users/20229798/OneDrive - University of Limerick/Desktop/Packaging waste forecasting/Country data/", ctry, ".xlsx")) |>
+  df <- read_excel(paste0("Desktop/Packaging waste forecasting/Country data/", ctry, ".xlsx")) |>
     dplyr::select(all_of(vars)) |>
     filter(Year >= 1997, Year <= 2022)
   df$gpw <- glass_packaging_waste[[ctry]][glass_packaging_waste$TIME <= 2022]
