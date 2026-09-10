@@ -5,3 +5,5 @@ The files in the 'Selecting optimal models' folder fit the candidate models for 
 The files in the Probabilistic Forecasting folder performs the forecasting using the optimal model for each of the waste streams in each of the countries.
 
 The files in Meta Modelling contain the code and datasets generated for the PCA meta analysis
+
+The files in the Actually generating forecasts folder are the scripts used to generate the 1,000 covariate paths used for the probabilistic models.
